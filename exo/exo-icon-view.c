@@ -2918,11 +2918,7 @@ exo_icon_view_key_press_event (GtkWidget   *widget,
 
   exo_icon_view_search_ensure_directory (icon_view);
 
-#if GTK_CHECK_VERSION (3,8,0)
-  if (!gtk_widget_is_visible (icon_view->priv->search_window))
-#else
   if (!gtk_widget_get_visible (icon_view->priv->search_window))
-#endif
     {
       /* check if keypress results in a text change in search_entry; prevents showing the search
        * window when only modifier keys (shift, control, ...) are pressed */
